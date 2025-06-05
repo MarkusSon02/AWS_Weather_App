@@ -1,0 +1,61 @@
+{
+    "request": {
+        "type": "City",
+        "query": "Edmonton, Canada",
+        "language": "en",
+        "unit": "m"
+    },
+    "location": {
+        "name": "Edmonton",
+        "country": "Canada",
+        "region": "Alberta",
+        "lat": "53.550",
+        "lon": "-113.500",
+        "timezone_id": "America/Edmonton",
+        "localtime": "2025-05-30 06:24",
+        "localtime_epoch": 1748586240,
+        "utc_offset": "-6.0"
+    },
+    "current": {
+        "observation_time": "12:24 PM",
+        "temperature": 11,
+        "weather_code": 113,
+        "weather_icons": [
+            "https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png"
+        ],
+        "weather_descriptions": [
+            "Sunny"
+        ],
+        "wind_speed": 16,
+        "wind_degree": 293,
+        "wind_dir": "WNW",
+        "pressure": 1021,
+        "precip": 0,
+        "humidity": 50,
+        "cloudcover": 0,
+        "feelslike": 9,
+        "uv_index": 0,
+        "visibility": 10,
+        "is_day": "yes"
+    },
+    "historical": {
+        "2025-01-01": {
+            "date": "2025-01-01",
+            "date_epoch": 1735689600,
+            "astro": {
+                "sunrise": "08:50 AM",
+                "sunset": "04:25 PM",
+                "moonrise": "10:41 AM",
+                "moonset": "06:19 PM",
+                "moon_phase": "Waxing Crescent",
+                "moon_illumination": 8
+            },
+            "mintemp": -24,
+            "maxtemp": -19,
+            "avgtemp": -22,
+            "totalsnow": 0,
+            "sunhour": 8,
+            "uv_index": 2
+        }
+    }
+}

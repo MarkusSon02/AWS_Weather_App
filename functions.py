@@ -27,6 +27,19 @@ def generate_date_list(start: str, end: str) -> list:
 
     return date_list
 
+def transform_data(data: dict, date: str) -> dict:
+    preprocessed_data = {}
+    for key, value in data['location'].items():
+        if key in ['name', 'country', 'region']:
+            preprocessed_data[key] = value
+    for key, value in data['historical'][date].items():
+        preprocessed_data[key] = value
+    for key, value in preprocessed_data['astro'].items():
+        preprocessed_data[key] = value
+    preprocessed_data.pop('astro')
+    return preprocessed_data
+
+
 def upload_partitioned_weather(data: dict, partitions: tuple, bucket: str) -> None:
     """
     Uploads JSON data to S3 using a partitioned path:
@@ -35,14 +48,18 @@ def upload_partitioned_weather(data: dict, partitions: tuple, bucket: str) -> No
     
     country, location, year, month, day = partitions
 
+    date = f"{year}-{month}-{day}"
+
+    preprocessed_data = transform_data(data, date)
+
     s3 = boto3.client("s3")
 
     key = f"data/weather_data/country={country}/location={location}/year={year}/month={month}/{location}_weather_{year}-{month}-{day}.json"
-    
+
     s3.put_object(
         Bucket=bucket,
         Key=key,
-        Body=json.dumps(data),
+        Body=json.dumps(preprocessed_data),
         ContentType="application/json"
     )
     

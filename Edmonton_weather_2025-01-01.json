@@ -1,0 +1,19 @@
+{
+    "name": "Edmonton",
+    "country": "Canada",
+    "region": "Alberta",
+    "date": "2025-01-01",
+    "date_epoch": 1735689600,
+    "mintemp": -24,
+    "maxtemp": -19,
+    "avgtemp": -22,
+    "totalsnow": 0,
+    "sunhour": 8,
+    "uv_index": 2,
+    "sunrise": "08:50 AM",
+    "sunset": "04:25 PM",
+    "moonrise": "10:41 AM",
+    "moonset": "06:19 PM",
+    "moon_phase": "Waxing Crescent",
+    "moon_illumination": 8
+}
